@@ -22,8 +22,11 @@ build/Release
 # Dependency directory
 # Commenting this out is preferred by some people, see
 # https://npmjs.org/doc/faq.html#Should-I-check-my-node_modules-folder-into-git
-node_modules
+node_modules/*
 bower_components
+
+# Include fixture modules
+!node_modules/**/basicModule
 
 # Users Environment Variables
 .lock-wscript

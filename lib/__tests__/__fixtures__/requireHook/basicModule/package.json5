@@ -1,0 +1,12 @@
+{
+  // DO NOT EDIT. TEST MODULE USED TO TEST REQUIRE HOOKS.
+  "name": "basicModule",
+  "version": "1.0.0",
+  "description": "Require hook test module.",
+  "main": "index.js",
+  "novivia-babel": {
+    "includeDevScopes": ["fake-scope-working-test"],
+  },
+  "author": "Mathieu M-Gosselin <mathieumg@gmail.com>",
+  "license": "MIT",
+}
