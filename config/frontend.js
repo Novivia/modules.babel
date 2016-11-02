@@ -9,9 +9,7 @@ import getCommonConfiguration from "./common";
 // "Frontend" includes everything that has a chance to get to the browser.
 export default function getFrontendBabelConfiguration({
   // Target all browsers by default.
-  targets = {
-    browsers: "all",
-  },
+  targets = {},
 
   useHotModuleReloading = false,
 
