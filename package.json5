@@ -1,7 +1,7 @@
 {
   "name": "@novivia/babel",
   "role": "babel",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "node": ">=4",
     "npm": ">=3",
@@ -27,7 +27,7 @@
     },
   },
   "scripts": {
-    "build": "build-module build -b 'config/**/*.js'",
+    "build": "build-module build -b 'config/**/*.js' -b ignoreRegex.js",
     "lint": "novivia-linter lint",
     "open-source": "open-source",
     "pub": "build-module publish",
@@ -38,8 +38,8 @@
     // Novivia dependencies.
     "@novivia/build-module": "^0.4.0",
     "@novivia/linter": "^1.6.0",
-    "@novivia/open-sourcer": "^0.1.0",
-    "@novivia/tester": "^0.0.3",
+    "@novivia/open-sourcer": "^0.1.1",
+    "@novivia/tester": "^0.0.4",
 
     // npm dependencies.
     "babel-preset-es2015":"^6.18.0",
