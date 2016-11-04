@@ -47,6 +47,36 @@ describe(
       },
     );
 
+    it(
+      oneLine`
+        returns a different configuration with the 'convertFlowToTypeCheck'
+        option on
+      `,
+      () => {
+        const flowTypeCheckConfiguration = getCommonConfiguration({
+          convertFlowToTypeCheck: true,
+        });
+
+        expect(flowTypeCheckConfiguration).not.toEqual(defaultConfiguration);
+      },
+    );
+
+    it(
+      oneLine`
+        returns a different configuration with the 'eliminateNonBuildingCode'
+        option off
+      `,
+      () => {
+        const eliminateNonBuildingCodeConfiguration = getCommonConfiguration({
+          eliminateNonBuildingCode: false,
+        });
+
+        expect(eliminateNonBuildingCodeConfiguration)
+        .not
+        .toEqual(defaultConfiguration);
+      },
+    );
+
     describe(
       "experimental features",
       () => {

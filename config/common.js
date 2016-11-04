@@ -11,11 +11,16 @@ const BABEL_PRESET_STAGES = [0, 1, 2, 3];
 export default function getCommonBabelConfiguration({
   convertFlowToComments = false,
   convertFlowToPropTypes = true,
+  convertFlowToTypeCheck = false,
+  eliminateNonBuildingCode = true,
 
   // Don't include if false, include if one of the experimental ECMAScript
   // stages.
   includeExperiments = 0,
   includeReact = true,
+
+  // Target everything by default, will compile everthing down to ES5.
+  targets = {},
   useRuntime = false,
 } = {}) {
   const configuration = {
@@ -37,7 +42,11 @@ export default function getCommonBabelConfiguration({
       // https://github.com/babel/babel/issues/2645 is addressed.
       require.resolve("babel-plugin-transform-decorators-legacy"),
     ],
-    presets: [],
+    presets: [
+      // All ratified ECMAScript specifications, targeting a specific version of
+      // Node or a specific set of browsers.
+      [require.resolve("babel-preset-env"), {targets}],
+    ],
   };
 
   // Optional plugins.
@@ -60,6 +69,12 @@ export default function getCommonBabelConfiguration({
     );
   }
 
+  if (convertFlowToTypeCheck) {
+    configuration.plugins.push(
+      require.resolve("babel-plugin-typecheck"),
+    );
+  }
+
   // Optional presets.
   if (BABEL_PRESET_STAGES.includes(includeExperiments)) {
     // Support for very experimental features, subject to changes.
@@ -74,6 +89,29 @@ export default function getCommonBabelConfiguration({
     // React and JSX support.
     configuration.presets.push(
       require.resolve("babel-preset-react"),
+    );
+  }
+
+  if (eliminateNonBuildingCode) {
+    configuration.plugins.push(
+      [
+        require.resolve("babel-plugin-minify-replace"),
+        {
+          replacements: [
+            // "global.__BUILDING__" --> "true"
+            {
+              identifierName: "global",
+              member: "__BUILDING__",
+              replacement: {
+                type: "booleanLiteral",
+                value: true,
+              },
+            },
+          ],
+        },
+      ],
+
+      require.resolve("babel-plugin-minify-dead-code-elimination"),
     );
   }
 

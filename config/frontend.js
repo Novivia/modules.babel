@@ -8,9 +8,6 @@ import getCommonConfiguration from "./common";
 
 // "Frontend" includes everything that has a chance to get to the browser.
 export default function getFrontendBabelConfiguration({
-  // Target all browsers by default.
-  targets = {},
-
   useHotModuleReloading = false,
 
   // Keep filesize lower in the front-end by leveraging the Babel runtime by
@@ -22,11 +19,6 @@ export default function getFrontendBabelConfiguration({
     useRuntime,
     ...commonSettings,
   });
-
-  frontendConfiguration.presets.unshift(
-    // All ratified ECMAScript specifications.
-    [require.resolve("babel-preset-env"), {targets}],
-  );
 
   // Enable Hot Module Reloading if requested.
   if (useHotModuleReloading) {
