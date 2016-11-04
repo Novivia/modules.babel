@@ -21,22 +21,6 @@ describe(
     );
 
     it(
-      oneLine`
-        returns a different configuration with the 'eliminateNonBuildingCode'
-        option off
-      `,
-      () => {
-        const eliminateNonBuildingCodeConfiguration = getBackendConfiguration({
-          eliminateNonBuildingCode: false,
-        });
-
-        expect(eliminateNonBuildingCodeConfiguration)
-        .not
-        .toEqual(defaultConfiguration);
-      },
-    );
-
-    it(
       "propagates common options to the common configuration",
       () => {
         const differentCommonConfiguration = getBackendConfiguration({
@@ -82,16 +66,15 @@ describe(
         );
 
         it(
-          oneLine`
-            returns a different configuration with a different
-            'nodeTargetVersion'
-          `,
+          "returns a different configuration with a different 'targets' option",
           () => {
             // Use a version of Node that never existed just to ensure it's
             // different from the current version and that it propagates
             // correctly to the configuration.
             const differentNodeVersionConfiguration = getBackendConfiguration({
-              nodeTargetVersion: 1,
+              targets: {
+                node: 1,
+              },
             });
 
             expect(differentNodeVersionConfiguration)
