@@ -32,7 +32,7 @@ export default function getFrontendBabelConfiguration({
           {
             imports: ["react"],
             locals: ["module"],
-            transform: "react-transform-hmr",
+            transform: require.resolve("react-transform-hmr"),
           },
 
           // TODO: Make this work with the webpack-dev-server CLI.
