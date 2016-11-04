@@ -1,5 +1,11 @@
 # Versions
 
+## v0.0.4 - (04/11/2016)
+
+* Added missing `react-transform-hmr` dependency.
+* Updated `@novivia/build-module` dependency to v0.5.
+
+
 ## v0.0.3 - (04/11/2016)
 
 * All configurations can now benefit from the `eliminateNonBuildingCode` option,

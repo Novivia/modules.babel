@@ -1,7 +1,7 @@
 {
   "name": "@novivia/babel",
   "role": "babel",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "engines": {
     "node": ">=4",
     "npm": ">=3",
@@ -19,6 +19,12 @@
     "url": "git+ssh://git.novivia.com/nov/modules.babel"
   },
   "main": "index.js",
+  "novivia-builder": {
+    "babelPatterns": [
+      "config/**/*.js",
+      "ignoreRegex.js",
+    ],
+  },
   "novivia-tester": {
     "coverageThreshold": {
       "global": {
@@ -27,7 +33,7 @@
     },
   },
   "scripts": {
-    "build": "build-module build -b 'config/**/*.js' -b ignoreRegex.js",
+    "build": "novivia-builder build",
     "lint": "novivia-linter lint",
     "open-source": "open-source",
     "pub": "build-module publish",
@@ -36,7 +42,7 @@
   },
   "devDependencies": {
     // Novivia dependencies.
-    "@novivia/build-module": "^0.4.0",
+    "@novivia/build-module": "^0.5.1",
     "@novivia/linter": "^1.6.0",
     "@novivia/open-sourcer": "^0.1.1",
     "@novivia/tester": "^0.0.4",
@@ -63,6 +69,7 @@
     "babel-register":"^6.18.0",
     "json5":"^0.5.0",
     "pkginfo-json5":"^0.5.0",
+    "react-transform-hmr": "^1.0.4",
     "semver":"^5.3.0",
   },
 }
