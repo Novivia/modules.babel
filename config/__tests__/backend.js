@@ -5,7 +5,6 @@
 
 import getBackendConfiguration from "../backend";
 import {major as getMajorVersion} from "semver";
-import {oneLine} from "common-tags";
 
 describe(
   "Backend configuration",
