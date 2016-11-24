@@ -13,7 +13,7 @@ export default function getFrontendBabelConfiguration({
   // Keep filesize lower in the front-end by leveraging the Babel runtime by
   // default.
   useRuntime = true,
-  ...commonSettings,
+  ...commonSettings
 } = {}) {
   const frontendConfiguration = getCommonConfiguration({
     useRuntime,

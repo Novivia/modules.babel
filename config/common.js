@@ -25,9 +25,8 @@ export default function getCommonBabelConfiguration({
 } = {}) {
   const configuration = {
     plugins: [
-      // FIXME: We need to include this for now because `stage-0` chokes on rest
-      // spread syntax for some reason. See
-      // https://github.com/babel/babel/pull/4755
+      // FIXME: We need to include this for now because the plugins below
+      // seem to choke on rest spread syntax for some reason.
       require.resolve("babel-plugin-syntax-object-rest-spread"),
       require.resolve("babel-plugin-transform-es2015-destructuring"),
       require.resolve("babel-plugin-transform-es2015-parameters"),
@@ -43,8 +42,8 @@ export default function getCommonBabelConfiguration({
       require.resolve("babel-plugin-transform-decorators-legacy"),
     ],
     presets: [
-      // All ratified ECMAScript specifications, targeting a specific version of
-      // Node or a specific set of browsers.
+      // All ratified ECMAScript specifications, targeting a specific version
+      // of Node or a specific set of browsers.
       [require.resolve("babel-preset-env"), {targets}],
     ],
   };

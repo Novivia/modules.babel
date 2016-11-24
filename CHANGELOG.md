@@ -1,5 +1,12 @@
 # Versions
 
+## v0.0.5 - (24/11/2016)
+
+* Updated dependencies:
+    * `babel-plugin-flow-react-proptypes` to v0.17.
+    * `babel-preset-env` to v0.0.8.
+
+
 ## v0.0.4 - (04/11/2016)
 
 * Added missing `react-transform-hmr` dependency.
