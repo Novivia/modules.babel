@@ -13,7 +13,7 @@ export default function getBackendBabelConfiguration({
   targets = {
     node: getMajorVersion(process.version),
   },
-  ...commonSettings,
+  ...commonSettings
 } = {}) {
   const backendConfiguration = getCommonConfiguration({
     targets,
