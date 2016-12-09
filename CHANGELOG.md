@@ -1,5 +1,12 @@
 # Versions
 
+## v0.1.0 - ()
+
+* Updated dependencies:
+    * `@novivia/tester` to v0.1.
+    * `babel-plugin-flow-react-proptypes` to v0.18.
+    * `babel-preset-env` to v0.0.9.
+
 ## v0.0.5 - (24/11/2016)
 
 * Updated dependencies:
