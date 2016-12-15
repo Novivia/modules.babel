@@ -44,7 +44,13 @@ export default function getCommonBabelConfiguration({
     presets: [
       // All ratified ECMAScript specifications, targeting a specific version
       // of Node or a specific set of browsers.
-      [require.resolve("babel-preset-env"), {targets}],
+      [
+        require.resolve("babel-preset-env"),
+        {
+          targets,
+          useBuiltIns: true,
+        },
+      ],
     ],
   };
 
