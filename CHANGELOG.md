@@ -1,6 +1,6 @@
 # Versions
 
-## v1.0.0 - ()
+## v1.0.0 - (15/12/2016)
 
 * Updated dependencies:
     * `@novivia/tester` to v1.
