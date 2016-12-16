@@ -1,5 +1,12 @@
 # Versions
 
+## v1.0.0 - (15/12/2016)
+
+* Updated dependencies:
+    * `@novivia/tester` to v1.
+    * `babel-preset-env` to v1.
+
+
 ## v0.1.0 - (10/12/2016)
 
 * Updated dependencies:
