@@ -1,5 +1,12 @@
 # Versions
 
+## v1.0.1 - (21/02/2017)
+
+* Updated dependencies:
+    * `babel-plugin-flow-react-proptypes` to v0.21.
+    * `babel-plugin-minify-replace` to v0.0.3.
+
+
 ## v1.0.0 - (15/12/2016)
 
 * Updated dependencies:
