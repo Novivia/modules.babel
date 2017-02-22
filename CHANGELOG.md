@@ -1,6 +1,6 @@
 # Versions
 
-## v1.0.1 - (21/02/2017)
+## v1.0.1 - (22/02/2017)
 
 * Updated dependencies:
     * `babel-plugin-flow-react-proptypes` to v0.21.
