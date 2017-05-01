@@ -1,5 +1,11 @@
 # Versions
 
+## v1.1.0 - (01/05/2017)
+
+* Made the usage of the `babel-plugin-add-module-exports` and
+  `babel-plugin-transform-decorators-legacy` plugins configurable.
+
+
 ## v1.0.2 - (27/04/2017)
 
 * Updated dependencies:
