@@ -17,6 +17,8 @@ export default function getCommonBabelConfiguration({
   // Don't include if false, include if one of the experimental ECMAScript
   // stages.
   includeExperiments = 0,
+  includeLegacyDecorators = true,
+  includeModuleExports = true,
   includeReact = true,
 
   // Target everything by default, will compile everthing down to ES5.
@@ -31,15 +33,6 @@ export default function getCommonBabelConfiguration({
       require.resolve("babel-plugin-transform-es2015-destructuring"),
       require.resolve("babel-plugin-transform-es2015-parameters"),
       require.resolve("babel-plugin-transform-object-rest-spread"),
-
-      // Keep Babel 5 behavior with require calls.
-      // See https://github.com/babel/babel/issues/2212
-      require.resolve("babel-plugin-add-module-exports"),
-
-      // Babel 5 era decorators.
-      // FIXME: Remove once
-      // https://github.com/babel/babel/issues/2645 is addressed.
-      require.resolve("babel-plugin-transform-decorators-legacy"),
     ],
     presets: [
       // All ratified ECMAScript specifications, targeting a specific version
@@ -59,6 +52,23 @@ export default function getCommonBabelConfiguration({
     // Use the Babel runtime if requested.
     configuration.plugins.unshift(
       require.resolve("babel-plugin-transform-runtime"),
+    );
+  }
+
+  if (includeModuleExports) {
+    // Keep Babel 5 behavior with require calls.
+    // See https://github.com/babel/babel/issues/2212
+    configuration.plugins.push(
+      require.resolve("babel-plugin-add-module-exports"),
+    );
+  }
+
+  if (includeLegacyDecorators) {
+    // Babel 5 era decorators.
+    // FIXME: Remove once
+    // https://github.com/babel/babel/issues/2645 is addressed.
+    configuration.plugins.push(
+      require.resolve("babel-plugin-transform-decorators-legacy"),
     );
   }
 

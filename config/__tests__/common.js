@@ -129,6 +129,34 @@ describe(
     );
 
     it(
+      oneLine`
+        returns a different configuration with the 'includeLegacyDecorators'
+        option off"
+      `,
+      () => {
+        const noDecoratorsConfiguration = getCommonConfiguration({
+          includeLegacyDecorators: false,
+        });
+
+        expect(noDecoratorsConfiguration).not.toEqual(defaultConfiguration);
+      },
+    );
+
+    it(
+      oneLine`
+        returns a different configuration with the 'includeModuleExports'
+        option off"
+      `,
+      () => {
+        const noExportsConfiguration = getCommonConfiguration({
+          includeModuleExports: false,
+        });
+
+        expect(noExportsConfiguration).not.toEqual(defaultConfiguration);
+      },
+    );
+
+    it(
       "returns a different configuration with the 'includeReact' option off",
       () => {
         const noReactConfiguration = getCommonConfiguration({
