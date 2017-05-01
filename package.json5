@@ -1,7 +1,7 @@
 {
   "name": "@novivia/babel",
   "role": "babel",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "engines": {
     "node": ">=4",
     "npm": ">=3",
